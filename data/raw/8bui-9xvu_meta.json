@@ -1,0 +1,1330 @@
+{
+  "id" : "8bui-9xvu",
+  "name" : "Complete Monthly Ridership (with Adjustments and Estimates)",
+  "assetType" : "dataset",
+  "attribution" : "Federal Transit Administration",
+  "attributionLink" : "https://www.transit.dot.gov/ntd/data-product/monthly-module-adjusted-data-release",
+  "averageRating" : 0,
+  "category" : "Public Transit",
+  "createdAt" : 1741985194,
+  "description" : "The Monthly module includes a limited set of key indicators reported by transit properties. Data is reported on a monthly basis, by mode and type of service, for a fiscal year.\n\nThe four data items included are:\n\n1.        Unlinked Passenger Trips \n2.        Vehicle Revenue Miles\n3.        Vehicle Revenue Hours\n4.        Vehicles Operated in Maximum Service (Peak Vehicles)\n\nThis dataset presents these values in their own column in a long format (each row of the file is an individual Agency/Mode/TOS/Date). The data source is shared with the static Excel file hosted on the FTA website here: https://www.transit.dot.gov/ntd/data-product/monthly-module-adjusted-data-release. This dataset differs from the static Excel file in its formatting as well as being updated weekly, to capture data as it is reported and validated for a given publication month.\n\nMode Codes:\nAlaska Railroad (AR)\nCable Car (CC)\nCommuter Rail (CR)\nHeavy Rail (HR)\nHybrid Rail (YR)\nInclined Plane (IP)\nLight Rail (LR)\nMonorail/Automated Guideway (MG)\nStreetcar Rail (SR)\nAerial Tramway (TR)\nCommuter Bus (CB)\nBus (MB)\nBus Rapid Transit (RB)\nDemand Response (DR)\nFerryboat (FB)\nJitney (JT)\nPúblico (PB)\nTrolleybus (TB)\nVanpool (VP)\n\n\nMode and Type of Service Changes and Impacts on this Time Series:\n\n\"Monthly data are reported by mode and type of service. From 2002 through 2011, there were 16 modes in the NTD. NTD monthly ridership data is now reported according to refined modal classifications. Service previously reported as bus (MB) now may be reported as either MB, Commuter Bus (CB), or Bus Rapid Transit (RB). Additionally, service previously categorized as Light Rail (LR) now may be reported as LR or Streetcar (SR). \n\nSimilarly, Types of Service were refined in Report Year 2019. From 2002 - 2018, there were two types of service: Directly Operated (DO) and Purchased Transportation (PT). As of 2019, Purchased Transportation is now classified such that agencies report the purchased transportation based on the type of contractor: general third party (PT), taxicab operator (TX), or transportation network company (TN). FTA concurrently removed the \"\"Demand Response Taxi\"\" (DT/PT) mode in 2019. FTA now considers all such service as Demand Response (DR) with Taxi (TX) type of service and this time series has been updated to reflect this change. \"\t\t\t\t\t\n\nFor more information on this dataset, please consult the full Read Me in the attached file.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "domainCName" : "data.transportation.gov",
+  "downloadCount" : 4017,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "USGOV_WORKS",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 41305101,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1746552295,
+  "publicationGroup" : 19811385,
+  "publicationStage" : "published",
+  "rowIdentifierColumnId" : 609636966,
+  "rowsUpdatedAt" : 1770129088,
+  "rowsUpdatedBy" : "rx4j-3g9k",
+  "tableId" : 19881434,
+  "totalTimesRated" : 0,
+  "viewCount" : 2471,
+  "viewLastModified" : 1761069792,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1758297720,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 7128591,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1758288390,
+    "targetAudience" : "public",
+    "workflowId" : 568,
+    "reviewer" : {
+      "id" : "a95h-dqad",
+      "displayName" : "DOT DataHub (DoNotDelete)"
+    },
+    "submissionDetails" : {
+      "permissionType" : "read"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1758297720,
+      "failureCount" : 0,
+      "startedAt" : 1758297720,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "rx4j-3g9k",
+      "displayName" : "Joe Gallagher"
+    }
+  }, {
+    "message" : "The `strict_permissions` flag must be on to enable internal approvals.",
+    "state" : "unsubmittable",
+    "targetAudience" : "internal",
+    "workflowId" : 5258
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 609636951,
+    "name" : "NTD ID",
+    "dataTypeName" : "text",
+    "description" : "A unique FTA-assigned number (NTD ID) that each transit agency must have before filing a report.",
+    "fieldName" : "ntd_id",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386276,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "99479",
+      "null" : "0",
+      "top" : [ {
+        "item" : "10003",
+        "count" : "2412"
+      }, {
+        "item" : "20080",
+        "count" : "2232"
+      }, {
+        "item" : "30034",
+        "count" : "2167"
+      }, {
+        "item" : "80001",
+        "count" : "2012"
+      }, {
+        "item" : "00001",
+        "count" : "1956"
+      }, {
+        "item" : "60008",
+        "count" : "1955"
+      }, {
+        "item" : "30019",
+        "count" : "1923"
+      }, {
+        "item" : "60056",
+        "count" : "1713"
+      }, {
+        "item" : "50113",
+        "count" : "1657"
+      }, {
+        "item" : "50015",
+        "count" : "1628"
+      }, {
+        "item" : "90154",
+        "count" : "1600"
+      }, {
+        "item" : "90015",
+        "count" : "1590"
+      }, {
+        "item" : "80006",
+        "count" : "1585"
+      }, {
+        "item" : "60048",
+        "count" : "1551"
+      }, {
+        "item" : "30083",
+        "count" : "1526"
+      }, {
+        "item" : "60007",
+        "count" : "1517"
+      }, {
+        "item" : "40034",
+        "count" : "1511"
+      }, {
+        "item" : "70005",
+        "count" : "1500"
+      }, {
+        "item" : "90036",
+        "count" : "1495"
+      }, {
+        "item" : "40008",
+        "count" : "1489"
+      } ],
+      "smallest" : "00001",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 609636952,
+    "name" : "Legacy NTD ID",
+    "dataTypeName" : "text",
+    "description" : "Deprecated form of NTD ID used prior to 2019",
+    "fieldName" : "legacy_ntd_id",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386277,
+    "cachedContents" : {
+      "non_null" : "356391",
+      "largest" : "9R02-137",
+      "null" : "6055",
+      "top" : [ {
+        "item" : "1003",
+        "count" : "2412"
+      }, {
+        "item" : "2080",
+        "count" : "2232"
+      }, {
+        "item" : "3034",
+        "count" : "2167"
+      }, {
+        "item" : "8001",
+        "count" : "2012"
+      }, {
+        "item" : "0001",
+        "count" : "1956"
+      }, {
+        "item" : "6008",
+        "count" : "1955"
+      }, {
+        "item" : "3019",
+        "count" : "1923"
+      }, {
+        "item" : "6056",
+        "count" : "1713"
+      }, {
+        "item" : "5113",
+        "count" : "1657"
+      }, {
+        "item" : "5015",
+        "count" : "1628"
+      }, {
+        "item" : "9154",
+        "count" : "1600"
+      }, {
+        "item" : "9015",
+        "count" : "1590"
+      }, {
+        "item" : "8006",
+        "count" : "1585"
+      }, {
+        "item" : "6048",
+        "count" : "1551"
+      }, {
+        "item" : "3083",
+        "count" : "1526"
+      }, {
+        "item" : "6007",
+        "count" : "1517"
+      }, {
+        "item" : "4034",
+        "count" : "1511"
+      }, {
+        "item" : "7005",
+        "count" : "1500"
+      }, {
+        "item" : "9036",
+        "count" : "1495"
+      }, {
+        "item" : "4008",
+        "count" : "1489"
+      } ],
+      "smallest" : "0001",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 609636953,
+    "name" : "Agency",
+    "dataTypeName" : "text",
+    "description" : "The Transit Property’s legal name",
+    "fieldName" : "agency",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386265,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "Yuma Metropolitan Planning Organization",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Massachusetts Bay Transportation Authority",
+        "count" : "2412"
+      }, {
+        "item" : "New Jersey Transit Corporation",
+        "count" : "2232"
+      }, {
+        "item" : "Maryland Transit Administration",
+        "count" : "2167"
+      }, {
+        "item" : "Pace, the Suburban Bus Division of the Regional Transportation Authority",
+        "count" : "2102"
+      }, {
+        "item" : "Utah Transit Authority",
+        "count" : "2012"
+      }, {
+        "item" : "King County",
+        "count" : "1956"
+      }, {
+        "item" : "Metropolitan Transit Authority of Harris County, Texas ",
+        "count" : "1955"
+      }, {
+        "item" : "Southeastern Pennsylvania Transportation Authority",
+        "count" : "1923"
+      }, {
+        "item" : "Dallas Area Rapid Transit",
+        "count" : "1713"
+      }, {
+        "item" : "The Greater Cleveland Regional Transit Authority",
+        "count" : "1628"
+      }, {
+        "item" : "Los Angeles County Metropolitan Transportation Authority ",
+        "count" : "1600"
+      }, {
+        "item" : "City and County of San Francisco",
+        "count" : "1590"
+      }, {
+        "item" : "Denver Regional Transportation District",
+        "count" : "1585"
+      }, {
+        "item" : "Capital Metropolitan Transportation Authority",
+        "count" : "1551"
+      }, {
+        "item" : "Transportation District Commission of Hampton Roads",
+        "count" : "1526"
+      }, {
+        "item" : "Fort Worth Transportation Authority",
+        "count" : "1517"
+      }, {
+        "item" : "County of Miami-Dade ",
+        "count" : "1511"
+      }, {
+        "item" : "Kansas City Area Transportation Authority",
+        "count" : "1500"
+      }, {
+        "item" : "Orange County Transportation Authority",
+        "count" : "1495"
+      }, {
+        "item" : "City of Charlotte North Carolina",
+        "count" : "1489"
+      } ],
+      "smallest" : "2Plus Partners in Transportation, Inc",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636954,
+    "name" : "Mode/Type of Service Status",
+    "dataTypeName" : "text",
+    "description" : "Indicates whether a mode and type of service has ended (inactive) or is continuing (active) as recorded in the NTD at the time of publication of this file.",
+    "fieldName" : "mode_type_of_service_status",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386266,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "Inactive",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Active",
+        "count" : "300714"
+      }, {
+        "item" : "Inactive",
+        "count" : "61732"
+      } ],
+      "smallest" : "Active",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636955,
+    "name" : "Reporter Type",
+    "dataTypeName" : "text",
+    "description" : "Indicates the agency's reporter type (Building Reporter, Full Reporter, Reduced Asset Reporter,  Rural Reporter, Separate Service Reporter or Small System Waiver Reporter) as of their most recent report year.",
+    "fieldName" : "reporter_type",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386267,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "Small Systems Reporter",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Full Reporter",
+        "count" : "331176"
+      }, {
+        "item" : "Small Systems Reporter",
+        "count" : "26835"
+      }, {
+        "item" : "Reduced Asset Reporter",
+        "count" : "1876"
+      }, {
+        "item" : "Rural Reporter",
+        "count" : "1332"
+      }, {
+        "item" : "Building Reporter",
+        "count" : "1107"
+      }, {
+        "item" : "Separate Service",
+        "count" : "120"
+      } ],
+      "smallest" : "Building Reporter",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636956,
+    "name" : "UACE CD",
+    "dataTypeName" : "text",
+    "description" : "The Census Bereau's Urban Area Census Code (UACE). This five-digit code uniquely identifies an urban area and remains unchanged from census to census.",
+    "fieldName" : "uace_cd",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157557243,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "63217",
+        "count" : "16507"
+      }, {
+        "item" : "51445",
+        "count" : "12331"
+      }, {
+        "item" : "78904",
+        "count" : "7277"
+      }, {
+        "item" : "80389",
+        "count" : "7151"
+      }, {
+        "item" : "92242",
+        "count" : "5815"
+      }, {
+        "item" : "09271",
+        "count" : "5427"
+      }, {
+        "item" : "16264",
+        "count" : "5346"
+      }, {
+        "item" : "22042",
+        "count" : "5050"
+      }, {
+        "item" : "56602",
+        "count" : "4210"
+      }, {
+        "item" : "69076",
+        "count" : "4191"
+      }, {
+        "item" : "77068",
+        "count" : "4048"
+      }, {
+        "item" : "03817",
+        "count" : "3924"
+      }, {
+        "item" : "69697",
+        "count" : "3828"
+      }, {
+        "item" : "04843",
+        "count" : "3457"
+      }, {
+        "item" : "69184",
+        "count" : "3413"
+      }, {
+        "item" : "71317",
+        "count" : "3346"
+      }, {
+        "item" : "86599",
+        "count" : "3214"
+      }, {
+        "item" : "17668",
+        "count" : "3176"
+      }, {
+        "item" : "78661",
+        "count" : "3106"
+      }, {
+        "item" : "57466",
+        "count" : "3021"
+      } ],
+      "smallest" : "00017",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 609636957,
+    "name" : "UZA Name",
+    "dataTypeName" : "text",
+    "description" : "The name of the Census-designated Urbanized Area, from the most recent census, in which the system primarily operates.",
+    "fieldName" : "uza_name",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386269,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "Yuma, AZ--CA",
+      "null" : "0",
+      "top" : [ {
+        "item" : "New York--Jersey City--Newark, NY--NJ",
+        "count" : "16507"
+      }, {
+        "item" : "Los Angeles--Long Beach--Anaheim, CA",
+        "count" : "12331"
+      }, {
+        "item" : "San Francisco--Oakland, CA",
+        "count" : "7277"
+      }, {
+        "item" : "Seattle--Tacoma, WA",
+        "count" : "7151"
+      }, {
+        "item" : "Washington--Arlington, DC--VA--MD",
+        "count" : "5815"
+      }, {
+        "item" : "Boston, MA--NH",
+        "count" : "5427"
+      }, {
+        "item" : "Chicago, IL--IN",
+        "count" : "5346"
+      }, {
+        "item" : "Dallas--Fort Worth--Arlington, TX",
+        "count" : "5050"
+      }, {
+        "item" : "Miami--Fort Lauderdale, FL",
+        "count" : "4210"
+      }, {
+        "item" : "Philadelphia, PA--NJ--DE--MD",
+        "count" : "4191"
+      }, {
+        "item" : "Sacramento, CA",
+        "count" : "4048"
+      }, {
+        "item" : "Atlanta, GA",
+        "count" : "3924"
+      }, {
+        "item" : "Pittsburgh, PA",
+        "count" : "3828"
+      }, {
+        "item" : "Baltimore, MD",
+        "count" : "3457"
+      }, {
+        "item" : "Phoenix--Mesa--Scottsdale, AZ",
+        "count" : "3413"
+      }, {
+        "item" : "Portland, OR--WA",
+        "count" : "3346"
+      }, {
+        "item" : "Tampa--St. Petersburg, FL",
+        "count" : "3214"
+      }, {
+        "item" : "Cleveland, OH",
+        "count" : "3176"
+      }, {
+        "item" : "San Diego, CA",
+        "count" : "3106"
+      }, {
+        "item" : "Milwaukee, WI",
+        "count" : "3021"
+      } ],
+      "smallest" : "Abilene, TX",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636958,
+    "name" : "Mode",
+    "dataTypeName" : "text",
+    "description" : "A system for carrying transit passengers described by specific right-of-way (ROW), technology and operational features. ",
+    "fieldName" : "mode",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386270,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "YR",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DR",
+        "count" : "149351"
+      }, {
+        "item" : "MB",
+        "count" : "141545"
+      }, {
+        "item" : "VP",
+        "count" : "20217"
+      }, {
+        "item" : "CB",
+        "count" : "14769"
+      }, {
+        "item" : "LR",
+        "count" : "7271"
+      }, {
+        "item" : "CR",
+        "count" : "7059"
+      }, {
+        "item" : "FB",
+        "count" : "6604"
+      }, {
+        "item" : "HR",
+        "count" : "4291"
+      }, {
+        "item" : "SR",
+        "count" : "3220"
+      }, {
+        "item" : "RB",
+        "count" : "2069"
+      }, {
+        "item" : "MG",
+        "count" : "1562"
+      }, {
+        "item" : "TB",
+        "count" : "1560"
+      }, {
+        "item" : "IP",
+        "count" : "996"
+      }, {
+        "item" : "YR",
+        "count" : "924"
+      }, {
+        "item" : "PB",
+        "count" : "288"
+      }, {
+        "item" : "CC",
+        "count" : "288"
+      }, {
+        "item" : "AR",
+        "count" : "240"
+      }, {
+        "item" : "TR",
+        "count" : "168"
+      }, {
+        "item" : "OR",
+        "count" : "24"
+      } ],
+      "smallest" : "AR",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636959,
+    "name" : "TOS",
+    "dataTypeName" : "text",
+    "description" : "Describes how public transportation services are provided by the transit agency: directly operated (DO) or purchased transportation (PT) which also includes from Taxi Operators and Transportation Network Companies (TX, TN) services.",
+    "fieldName" : "tos",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386271,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "TX",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DO",
+        "count" : "199581"
+      }, {
+        "item" : "PT",
+        "count" : "150365"
+      }, {
+        "item" : "TX",
+        "count" : "11567"
+      }, {
+        "item" : "TN",
+        "count" : "933"
+      } ],
+      "smallest" : "DO",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636960,
+    "name" : "3 Mode",
+    "dataTypeName" : "text",
+    "description" : " A grouping of modes based upon whether the mode operates on rail, is a bus mode (includes demand response services), is ferry boat service or other.",
+    "fieldName" : "_3_mode",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157386272,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "Rail",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Bus",
+        "count" : "329799"
+      }, {
+        "item" : "Rail",
+        "count" : "26019"
+      }, {
+        "item" : "Ferry",
+        "count" : "6604"
+      }, {
+        "item" : "Other",
+        "count" : "24"
+      } ],
+      "smallest" : "Bus",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636961,
+    "name" : "Date",
+    "dataTypeName" : "calendar_date",
+    "description" : "The month (in Month-Year format) for which UPT, VRM, VRH and VOM was reported by the agency for the given Mode and TOS.",
+    "fieldName" : "date",
+    "position" : 11,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 157386273,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "2025-12-01T00:00:00.000",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2011-10-01T00:00:00.000",
+        "count" : "1402"
+      }, {
+        "item" : "2011-12-01T00:00:00.000",
+        "count" : "1401"
+      }, {
+        "item" : "2011-11-01T00:00:00.000",
+        "count" : "1401"
+      }, {
+        "item" : "2011-09-01T00:00:00.000",
+        "count" : "1400"
+      }, {
+        "item" : "2011-08-01T00:00:00.000",
+        "count" : "1400"
+      }, {
+        "item" : "2011-03-01T00:00:00.000",
+        "count" : "1395"
+      }, {
+        "item" : "2011-07-01T00:00:00.000",
+        "count" : "1395"
+      }, {
+        "item" : "2011-06-01T00:00:00.000",
+        "count" : "1395"
+      }, {
+        "item" : "2011-01-01T00:00:00.000",
+        "count" : "1395"
+      }, {
+        "item" : "2011-02-01T00:00:00.000",
+        "count" : "1395"
+      }, {
+        "item" : "2011-05-01T00:00:00.000",
+        "count" : "1394"
+      }, {
+        "item" : "2011-04-01T00:00:00.000",
+        "count" : "1394"
+      }, {
+        "item" : "2012-11-01T00:00:00.000",
+        "count" : "1346"
+      }, {
+        "item" : "2012-10-01T00:00:00.000",
+        "count" : "1345"
+      }, {
+        "item" : "2012-12-01T00:00:00.000",
+        "count" : "1343"
+      }, {
+        "item" : "2012-07-01T00:00:00.000",
+        "count" : "1342"
+      }, {
+        "item" : "2012-08-01T00:00:00.000",
+        "count" : "1342"
+      }, {
+        "item" : "2012-09-01T00:00:00.000",
+        "count" : "1341"
+      }, {
+        "item" : "2012-04-01T00:00:00.000",
+        "count" : "1339"
+      }, {
+        "item" : "2012-05-01T00:00:00.000",
+        "count" : "1337"
+      } ],
+      "smallest" : "2002-01-01T00:00:00.000",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : {
+      "view" : "date_monthy"
+    }
+  }, {
+    "id" : 609636962,
+    "name" : "UPT",
+    "dataTypeName" : "number",
+    "description" : "The number of passengers who board public transportation vehicles. Passengers are counted each time they board vehicles no matter how many vehicles they use to travel from their origin to their destination. ",
+    "fieldName" : "upt",
+    "position" : 12,
+    "renderTypeName" : "number",
+    "tableColumnId" : 157386275,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "253609943",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "8286"
+      }, {
+        "item" : "2",
+        "count" : "67"
+      }, {
+        "item" : "242",
+        "count" : "48"
+      }, {
+        "item" : "20",
+        "count" : "47"
+      }, {
+        "item" : "18",
+        "count" : "43"
+      }, {
+        "item" : "16",
+        "count" : "42"
+      }, {
+        "item" : "13",
+        "count" : "42"
+      }, {
+        "item" : "12",
+        "count" : "40"
+      }, {
+        "item" : "799",
+        "count" : "40"
+      }, {
+        "item" : "728",
+        "count" : "39"
+      }, {
+        "item" : "2500",
+        "count" : "39"
+      }, {
+        "item" : "17",
+        "count" : "38"
+      }, {
+        "item" : "2400",
+        "count" : "37"
+      }, {
+        "item" : "279",
+        "count" : "36"
+      }, {
+        "item" : "1411",
+        "count" : "36"
+      }, {
+        "item" : "2418",
+        "count" : "35"
+      }, {
+        "item" : "823",
+        "count" : "35"
+      }, {
+        "item" : "672",
+        "count" : "35"
+      }, {
+        "item" : "326",
+        "count" : "35"
+      }, {
+        "item" : "2442",
+        "count" : "34"
+      } ],
+      "smallest" : "0",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 609636963,
+    "name" : "VOMS",
+    "dataTypeName" : "number",
+    "description" : "The number of revenue vehicles operated to meet the maximum service requirement for the respective month.",
+    "fieldName" : "voms",
+    "position" : 13,
+    "renderTypeName" : "number",
+    "tableColumnId" : 157754813,
+    "cachedContents" : {
+      "non_null" : "360435",
+      "largest" : "6374",
+      "null" : "2011",
+      "top" : [ {
+        "item" : "2",
+        "count" : "12597"
+      }, {
+        "item" : "4",
+        "count" : "11671"
+      }, {
+        "item" : "6",
+        "count" : "11458"
+      }, {
+        "item" : "8",
+        "count" : "10888"
+      }, {
+        "item" : "5",
+        "count" : "10450"
+      }, {
+        "item" : "7",
+        "count" : "9709"
+      }, {
+        "item" : "3",
+        "count" : "9699"
+      }, {
+        "item" : "10",
+        "count" : "9402"
+      }, {
+        "item" : "12",
+        "count" : "8553"
+      }, {
+        "item" : "9",
+        "count" : "8237"
+      }, {
+        "item" : "14",
+        "count" : "7922"
+      }, {
+        "item" : "11",
+        "count" : "7302"
+      }, {
+        "item" : "16",
+        "count" : "7163"
+      }, {
+        "item" : "13",
+        "count" : "6965"
+      }, {
+        "item" : "1",
+        "count" : "6838"
+      }, {
+        "item" : "15",
+        "count" : "6802"
+      }, {
+        "item" : "17",
+        "count" : "6139"
+      }, {
+        "item" : "20",
+        "count" : "6105"
+      }, {
+        "item" : "18",
+        "count" : "5805"
+      }, {
+        "item" : "22",
+        "count" : "5645"
+      } ],
+      "smallest" : "0",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636964,
+    "name" : "VRH",
+    "dataTypeName" : "number",
+    "description" : "The hours that vehicles are scheduled to or actually travel while in revenue service. Vehicle revenue hours include layovers and driver recovery time.",
+    "fieldName" : "vrh",
+    "position" : 14,
+    "renderTypeName" : "number",
+    "tableColumnId" : 157754812,
+    "cachedContents" : {
+      "non_null" : "358649",
+      "largest" : "1945656",
+      "null" : "3797",
+      "top" : [ {
+        "item" : "0",
+        "count" : "6274"
+      }, {
+        "item" : "484",
+        "count" : "159"
+      }, {
+        "item" : "72",
+        "count" : "132"
+      }, {
+        "item" : "416",
+        "count" : "132"
+      }, {
+        "item" : "500",
+        "count" : "125"
+      }, {
+        "item" : "240",
+        "count" : "125"
+      }, {
+        "item" : "480",
+        "count" : "122"
+      }, {
+        "item" : "504",
+        "count" : "120"
+      }, {
+        "item" : "589",
+        "count" : "118"
+      }, {
+        "item" : "2000",
+        "count" : "117"
+      }, {
+        "item" : "620",
+        "count" : "117"
+      }, {
+        "item" : "630",
+        "count" : "113"
+      }, {
+        "item" : "400",
+        "count" : "113"
+      }, {
+        "item" : "286",
+        "count" : "111"
+      }, {
+        "item" : "2323",
+        "count" : "111"
+      }, {
+        "item" : "660",
+        "count" : "110"
+      }, {
+        "item" : "2",
+        "count" : "110"
+      }, {
+        "item" : "357",
+        "count" : "110"
+      }, {
+        "item" : "485",
+        "count" : "108"
+      }, {
+        "item" : "796",
+        "count" : "108"
+      } ],
+      "smallest" : "0",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636965,
+    "name" : "VRM",
+    "dataTypeName" : "number",
+    "description" : "The miles that vehicles are scheduled to or actually travel while in revenue service",
+    "fieldName" : "vrm",
+    "position" : 15,
+    "renderTypeName" : "number",
+    "tableColumnId" : 157754811,
+    "cachedContents" : {
+      "non_null" : "359121",
+      "largest" : "31113873",
+      "null" : "3325",
+      "top" : [ {
+        "item" : "0",
+        "count" : "6058"
+      }, {
+        "item" : "36000",
+        "count" : "74"
+      }, {
+        "item" : "8333",
+        "count" : "69"
+      }, {
+        "item" : "4112",
+        "count" : "43"
+      }, {
+        "item" : "3771",
+        "count" : "37"
+      }, {
+        "item" : "10876",
+        "count" : "36"
+      }, {
+        "item" : "11394",
+        "count" : "34"
+      }, {
+        "item" : "4308",
+        "count" : "33"
+      }, {
+        "item" : "19614",
+        "count" : "31"
+      }, {
+        "item" : "167335",
+        "count" : "31"
+      }, {
+        "item" : "20548",
+        "count" : "30"
+      }, {
+        "item" : "33390",
+        "count" : "29"
+      }, {
+        "item" : "30765",
+        "count" : "29"
+      }, {
+        "item" : "3916",
+        "count" : "29"
+      }, {
+        "item" : "1787",
+        "count" : "28"
+      }, {
+        "item" : "4089",
+        "count" : "28"
+      }, {
+        "item" : "13098",
+        "count" : "28"
+      }, {
+        "item" : "3339",
+        "count" : "27"
+      }, {
+        "item" : "1877",
+        "count" : "26"
+      }, {
+        "item" : "15770",
+        "count" : "26"
+      } ],
+      "smallest" : "0",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636966,
+    "name" : "Agency Mode TOS Date",
+    "dataTypeName" : "text",
+    "description" : "Unique row identifier derived by concatenating agency, mode, TOS, UZA, status, reporter type and date columns.",
+    "fieldName" : "agency_mode_tos_date",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 157557229,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "99479_MB_PT_Active_Full Reporter_85087_2025-12-01",
+      "null" : "0",
+      "top" : [ {
+        "item" : "50010_DR_DO_Active_Full Reporter_00766_2002-05-01",
+        "count" : "1"
+      }, {
+        "item" : "30018_MB_DO_Inactive_Full Reporter_47530_2014-02-01",
+        "count" : "1"
+      }, {
+        "item" : "40044_DR_DO_Active_Full Reporter_58600_2025-04-01",
+        "count" : "1"
+      }, {
+        "item" : "30007_DR_PT_Active_Full Reporter_75421_2024-10-01",
+        "count" : "1"
+      }, {
+        "item" : "40022_DR_DO_Inactive_Full Reporter_03817_2012-08-01",
+        "count" : "1"
+      }, {
+        "item" : "20078_CR_DO_Active_Full Reporter_63217_2015-04-01",
+        "count" : "1"
+      }, {
+        "item" : "50029_DR_DO_Active_Full Reporter_05869_2024-04-01",
+        "count" : "1"
+      }, {
+        "item" : "10183_FB_DO_Active_Full Reporter_05167_2018-07-01",
+        "count" : "1"
+      }, {
+        "item" : "00007_RB_DO_Active_Full Reporter_28117_2025-02-01",
+        "count" : "1"
+      }, {
+        "item" : "40051_DR_DO_Active_Full Reporter_25228_2008-09-01",
+        "count" : "1"
+      }, {
+        "item" : "90089_DR_PT_Active_Full Reporter_79498_2006-02-01",
+        "count" : "1"
+      }, {
+        "item" : "50182_DR_TX_Active_Full Reporter_16264_2018-04-01",
+        "count" : "1"
+      }, {
+        "item" : "30087_DR_PT_Inactive_Full Reporter_00042_2011-07-01",
+        "count" : "1"
+      }, {
+        "item" : "50044_DR_DO_Inactive_Full Reporter_31087_2005-11-01",
+        "count" : "1"
+      }, {
+        "item" : "00008_SR_DO_Inactive_Full Reporter_71317_2012-07-01",
+        "count" : "1"
+      }, {
+        "item" : "10107_MB_DO_Active_Full Reporter_10162_2005-01-01",
+        "count" : "1"
+      }, {
+        "item" : "50184_MB_PT_Inactive_Full Reporter_39430_2009-11-01",
+        "count" : "1"
+      }, {
+        "item" : "50043_MB_DO_Active_Full Reporter_28333_2019-08-01",
+        "count" : "1"
+      }, {
+        "item" : "40140_MB_PT_Active_Full Reporter_08974_2024-04-01",
+        "count" : "1"
+      }, {
+        "item" : "40191_DR_DO_Active_Full Reporter_26750_2019-02-01",
+        "count" : "1"
+      } ],
+      "smallest" : "00001_DR_PT_Active_Full Reporter_80389_2002-01-01",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636967,
+    "name" : "State",
+    "dataTypeName" : "text",
+    "description" : "State that the headquarters of the NTD Reporter is located in (not necessarily reflective of the entire extent of their transit operations, which may overlap multiple states).",
+    "fieldName" : "state",
+    "position" : 17,
+    "renderTypeName" : "text",
+    "tableColumnId" : 158324624,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "WY",
+      "null" : "0",
+      "top" : [ {
+        "item" : "CA",
+        "count" : "55236"
+      }, {
+        "item" : "FL",
+        "count" : "23461"
+      }, {
+        "item" : "TX",
+        "count" : "22760"
+      }, {
+        "item" : "PA",
+        "count" : "18305"
+      }, {
+        "item" : "NY",
+        "count" : "18046"
+      }, {
+        "item" : "WA",
+        "count" : "17064"
+      }, {
+        "item" : "OH",
+        "count" : "12442"
+      }, {
+        "item" : "MI",
+        "count" : "11693"
+      }, {
+        "item" : "MA",
+        "count" : "10716"
+      }, {
+        "item" : "IL",
+        "count" : "10540"
+      }, {
+        "item" : "WI",
+        "count" : "10217"
+      }, {
+        "item" : "VA",
+        "count" : "9930"
+      }, {
+        "item" : "NC",
+        "count" : "9589"
+      }, {
+        "item" : "IN",
+        "count" : "9122"
+      }, {
+        "item" : "GA",
+        "count" : "8101"
+      }, {
+        "item" : "CT",
+        "count" : "7672"
+      }, {
+        "item" : "NJ",
+        "count" : "7268"
+      }, {
+        "item" : "MD",
+        "count" : "7095"
+      }, {
+        "item" : "OR",
+        "count" : "6314"
+      }, {
+        "item" : "IA",
+        "count" : "5987"
+      } ],
+      "smallest" : "AK",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  }, {
+    "id" : 609636968,
+    "name" : "FTA Region",
+    "dataTypeName" : "text",
+    "description" : "The FTA region in which the reporter is located.",
+    "fieldName" : "fta_region",
+    "position" : 18,
+    "renderTypeName" : "text",
+    "tableColumnId" : 158324625,
+    "cachedContents" : {
+      "non_null" : "362446",
+      "largest" : "9",
+      "null" : "0",
+      "top" : [ {
+        "item" : "9",
+        "count" : "64774"
+      }, {
+        "item" : "4",
+        "count" : "61387"
+      }, {
+        "item" : "5",
+        "count" : "59437"
+      }, {
+        "item" : "3",
+        "count" : "39788"
+      }, {
+        "item" : "6",
+        "count" : "34132"
+      }, {
+        "item" : "10",
+        "count" : "26032"
+      }, {
+        "item" : "2",
+        "count" : "25674"
+      }, {
+        "item" : "1",
+        "count" : "23668"
+      }, {
+        "item" : "7",
+        "count" : "14753"
+      }, {
+        "item" : "8",
+        "count" : "12801"
+      } ],
+      "smallest" : "1",
+      "count" : "362446",
+      "cardinality" : "362446"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Public Domain U.S. Government",
+    "termsLink" : "https://www.usa.gov/government-works"
+  },
+  "metadata" : {
+    "attachments" : [ {
+      "filename" : "Complete Monthly Ridership Read Me.docx",
+      "assetId" : "0a681268-644d-4948-ae96-6745ed7ca161",
+      "name" : "Complete Monthly Ridership Read Me.docx"
+    } ],
+    "custom_fields" : {
+      "Common Core" : {
+        "Contact Email" : "NTDHelp@dot.gov",
+        "Update Frequency\t" : "R/P1M",
+        "Contact Name" : "NTD Program Support",
+        "License" : "http://www.usa.gov/publicdomain/label/1.0/",
+        "Publisher" : "Federal Transit Administration"
+      }
+    },
+    "rowIdentifier" : 609636966,
+    "rowLabel" : "Agency/Mode/Service/Month/Service",
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "rx4j-3g9k",
+    "displayName" : "Joe Gallagher",
+    "screenName" : "Joe Gallagher",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "rx4j-3g9k",
+    "displayName" : "Joe Gallagher",
+    "screenName" : "Joe Gallagher",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "ntd", "national transit database", "monthly ridership", "ridership", "upt", "vrm", "voms", "vrh" ],
+  "flags" : [ "default", "federated", "internalToPublicFederatedView", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

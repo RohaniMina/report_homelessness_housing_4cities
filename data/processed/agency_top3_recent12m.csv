@@ -1,0 +1,10 @@
+metro,agency,upt,rank,metro_total,share_of_metro
+Chicago,Chicago Transit Authority,319160766,1,380710497,0.8383293040643426
+Chicago,Northeast Illinois Regional Commuter Railroad Corporation,37886008,2,380710497,0.09951395692669855
+Chicago,"Pace, the Suburban Bus Division of the Regional Transportation Authority",20621923,3,380710497,0.054166940923617346
+NYC,MTA New York City Transit,3009258248,1,3704395282,0.8123480403460897
+NYC,New Jersey Transit Corporation,224092068,2,3704395282,0.06049356263055515
+NYC,MTA Bus Company,134351659,3,3704395282,0.03626817571354417
+SF Bay,City and County of San Francisco,170916431,1,308340908,0.5543099425522869
+SF Bay,San Francisco Bay Area Rapid Transit District,61583538,2,308340908,0.1997254869600371
+SF Bay,Alameda-Contra Costa Transit District,40592564,3,308340908,0.13164832478212718

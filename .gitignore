@@ -1,0 +1,10 @@
+# OS / local artifacts
+.DS_Store
+
+# Python env/cache
+.venv/
+__pycache__/
+*.pyc
+
+# Local plotting cache
+.mplconfig/

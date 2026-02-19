@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Executive Summary - Transit Recovery</title>
+  <style>
+    :root { --bg:#f4f6f8; --card:#ffffff; --ink:#1f2937; --muted:#4b5563; --accent:#0b5fa5; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+    .page { max-width:1050px; margin:18px auto; background:var(--card); padding:22px 24px; border-radius:12px; box-shadow:0 1px 10px rgba(0,0,0,.08); }
+    h1,h2,h3 { margin:0 0 8px; line-height:1.2; }
+    h1 { font-size:1.7rem; }
+    h2 { margin-top:16px; font-size:1.2rem; color:var(--accent); }
+    ul { margin:8px 0 10px 20px; }
+    .meta { color:var(--muted); margin-bottom:10px; }
+    .kpis { display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:10px; }
+    .kpi { background:#f8fbff; border:1px solid #dbe8f5; border-radius:8px; padding:10px; }
+    .kpi b { color:var(--accent); font-size:1.2rem; }
+    .fig { margin-top:12px; }
+    .fig img { width:100%; border:1px solid #e5e7eb; border-radius:8px; }
+    .caption { font-size:.92rem; color:var(--muted); margin-top:3px; }
+    @media print {
+      body { background:#fff; }
+      .page { box-shadow:none; margin:0; border-radius:0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Executive Summary: Public Transit Recovery After COVID</h1>
+    <div class="meta">NYC, SF Bay, Chicago | FTA NTD dataset <code>8bui-9xvu</code> | Through 2025-12</div>
+
+    <h2>Bottom Line</h2>
+    <ul>
+      <li>NYC recovered substantially more than SF Bay and Chicago.</li>
+      <li>All three collapsed in April 2020, but post-shock recovery paths diverged sharply.</li>
+      <li>By end-2025, no metro fully returned to 2019 annual totals.</li>
+    </ul>
+
+    <h2>Headline Metrics</h2>
+    <div class="kpis">
+      <div class="kpi">Latest recovery<br><b>NYC 89.9%</b><br>of 2015-2019 baseline</div>
+      <div class="kpi">Latest recovery<br><b>SF Bay 66.7%</b><br>of 2015-2019 baseline</div>
+      <div class="kpi">Latest recovery<br><b>Chicago 62.0%</b><br>of 2015-2019 baseline</div>
+    </div>
+    <ul>
+      <li>Trough (Apr 2020): NYC 12.5%, SF Bay 13.4%, Chicago 18.5% of baseline.</li>
+      <li>2025 annual vs 2019: NYC 86.3%, SF Bay 69.3%, Chicago 68.7%.</li>
+    </ul>
+
+    <h2>Interpretation</h2>
+    <ul>
+      <li>Recovery appears metro-specific rather than a universal return to 2019.</li>
+      <li>Bus/ferry-oriented demand recovered better than commuter-heavy rail in SF Bay and Chicago.</li>
+      <li>Service and capital planning should use corridor/mode-specific recovery assumptions.</li>
+    </ul>
+
+    <div class="fig"><img src="figures/deep_dive/01_recovery_trend_pct_baseline.png" alt="Recovery trend" /><div class="caption">Recovery trend (% of pre-COVID baseline)</div></div>
+    <div class="fig"><img src="figures/deep_dive/03_annual_vs_2019.png" alt="Annual vs 2019" /><div class="caption">Annual ridership as % of 2019</div></div>
+    <div class="fig"><img src="figures/deep_dive/05_mode_recovery_heatmap.png" alt="Mode recovery" /><div class="caption">Mode-level recovery (recent 12m vs pre-COVID baseline)</div></div>
+  </div>
+</body>
+</html>

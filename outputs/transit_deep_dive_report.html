@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transit Ridership Deep Dive</title>
+  <style>
+    :root { --bg: #f7f8fa; --ink: #1f2937; --muted: #4b5563; --card: #ffffff; --accent: #0b5fa5; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 28px 20px 50px; }
+    h1, h2, h3 { line-height: 1.25; }
+    h1 { margin: 0 0 10px; }
+    .card { background: var(--card); border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); margin: 14px 0; }
+    ul { margin-top: 8px; }
+    figure { margin: 14px 0 24px; }
+    img { width: 100%; border-radius: 8px; border: 1px solid #e5e7eb; }
+    figcaption { color: var(--muted); font-size: 0.93rem; margin-top: 6px; }
+    .muted { color: var(--muted); }
+    .kpi { font-weight: 700; color: var(--accent); }
+    code { background: #eef2f7; padding: 0 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Transit Ridership Deep Dive (NYC, SF Bay, Chicago)</h1>
+    <p class="muted">FTA NTD monthly ridership through 2025-12</p>
+
+    <section class="card">
+      <h2>TL;DR</h2>
+      <ul>
+        <li><span class="kpi">NYC recovered far more:</span> 89.9% of baseline vs SF Bay 66.7% and Chicago 62.0%.</li>
+        <li><span class="kpi">Shared collapse in April 2020:</span> NYC 12.5%, SF Bay 13.4%, Chicago 18.5% of baseline.</li>
+        <li><span class="kpi">No metro fully back to 2019 annual total in 2025:</span> NYC 86.3%, SF Bay 69.3%, Chicago 68.7%.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Data and Methodology</h2>
+      <ul>
+        <li>Agency-reported monthly UPT (unlinked passenger trips), mode-level operational ridership.</li>
+        <li>Source: USDOT/FTA NTD Complete Monthly Ridership dataset (<code>8bui-9xvu</code>).</li>
+        <li>Metro mapping by UZA label for NYC, SF Bay, and Chicago.</li>
+        <li>Baseline: January 2015 to December 2019 (same-month normalization).</li>
+        <li>Key metrics: % of baseline, annual % vs 2019, mode-share shift, and mode-level recovery.</li>
+      </ul>
+    </section>
+
+    <section class="card"><h2>Insights and Visual Findings</h2>
+      <h3>1) Recovery paths diverged after a common shock</h3>
+      <p>NYC climbed back near baseline; SF Bay and Chicago stayed materially below pre-COVID levels.</p>
+      <figure><img src="figures/deep_dive/01_recovery_trend_pct_baseline.png" alt="Monthly Ridership Recovery (% of 2015-2019 baseline)"/><figcaption>Monthly Ridership Recovery (% of 2015-2019 baseline)</figcaption></figure>
+
+      <h3>2) Trough-to-latest rebound differs by metro</h3>
+      <p>All metros collapsed in the same month, but the rebound magnitude is strongest in NYC.</p>
+      <figure><img src="figures/deep_dive/02_trough_vs_latest.png" alt="Collapse and Recovery by Metro"/><figcaption>Collapse and Recovery by Metro</figcaption></figure>
+
+      <h3>3) Annual totals still below 2019</h3>
+      <p>2025 annual ridership remains below 2019 in all three metros, especially SF Bay and Chicago.</p>
+      <figure><img src="figures/deep_dive/03_annual_vs_2019.png" alt="Annual Ridership Relative to 2019"/><figcaption>Annual Ridership Relative to 2019</figcaption></figure>
+
+      <h3>4) Mode mix shifted and only partly normalized</h3>
+      <p>Bus/ferry shares expanded during the shock; rail-heavy structures recovered more slowly.</p>
+      <figure><img src="figures/deep_dive/04_mode_share_shift.png" alt="Top-Mode Share Shift: Pre-COVID vs Recent"/><figcaption>Top-Mode Share Shift: Pre-COVID vs Recent</figcaption></figure>
+
+      <h3>5) Mode-level recovery is uneven</h3>
+      <p>Recent performance varies strongly by mode within each metro, signaling segmented demand recovery.</p>
+      <figure><img src="figures/deep_dive/05_mode_recovery_heatmap.png" alt="Mode Recovery Heatmap"/><figcaption>Mode Recovery Heatmap</figcaption></figure>
+
+      <h3>6) Seasonal strength remains muted</h3>
+      <p>Recent month-by-month levels are below pre-COVID seasonal averages across most months outside NYC.</p>
+      <figure><img src="figures/deep_dive/06_seasonality_profile.png" alt="Seasonality Shift: Recent vs Pre-COVID"/><figcaption>Seasonality Shift: Recent vs Pre-COVID</figcaption></figure>
+    </section>
+
+    <section class="card">
+      <h2>Detailed Findings</h2>
+      <ul>
+        <li>Latest recovery (2025-12): NYC <strong>89.9%</strong>, SF Bay <strong>66.7%</strong>, Chicago <strong>62.0%</strong>.</li>
+        <li>Trough month: April 2020 for all three metros.</li>
+        <li>2025 annual vs 2019: NYC <strong>86.3%</strong>, SF Bay <strong>69.3%</strong>, Chicago <strong>68.7%</strong>.</li>
+      </ul>
+      <p class="muted">Generated from processed tables in <code>data/processed/</code> via <code>src/build_report.py</code>.</p>
+    </section>
+  </div>
+</body>
+</html>
