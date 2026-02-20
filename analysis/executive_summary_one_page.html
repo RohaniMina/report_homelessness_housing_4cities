@@ -1,8 +1,27 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Executive Summary</title>
-<style>body{font-family:Arial,sans-serif;margin:24px;color:#132238}h1{margin-top:0}.t{background:#eef6ff;padding:12px;border-left:4px solid #2b6cb0}img{max-width:100%;border:1px solid #d9dee8;border-radius:6px;margin-top:8px}.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:860px){.cols{grid-template-columns:1fr}}</style></head>
-<body><h1>Executive Summary: Homelessness and Housing (4 Cities)</h1>
-<div class="t"><ul><li>PIT homelessness rose in all cities (2011->2024), largest in Chicago and NYC.</li><li>NYC/Chicago recent increases are mainly sheltered-system growth; LA rose in both sheltered and unsheltered counts.</li><li>Rent pressure rose in all metros (2015->2026).</li><li>2026 annual comparable PIT not yet available in this run.</li></ul></div>
-<h2>Data and Method</h2><ul><li>HUD PIT CoC annual counts, Zillow ZORI annualized, NYC daily shelter census.</li><li>Trend analysis, mayor segmentation, and 2022->2024 decomposition.</li></ul>
-<h2>Core Findings</h2><ul><li>Chicago: 183.9% PIT change, unsheltered-share -17.3 pp.</li><li>New York City: 174.1% PIT change, unsheltered-share -2.0 pp.</li><li>Los Angeles: 105.7% PIT change, unsheltered-share 18.3 pp.</li><li>San Francisco: 46.8% PIT change, unsheltered-share -7.2 pp.</li></ul>
-<div class="cols"><img src="chart_homeless_pct_change_city.png" alt="growth"><img src="chart_2022_2024_decomposition.png" alt="composition"></div>
-</body></html>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Executive summary</title><style>
+    body{font-family:Arial,sans-serif;max-width:1100px;margin:22px auto;padding:0 12px;line-height:1.45;color:#1b2433;background:#f8fafc}
+    main{background:white;padding:24px;border:1px solid #dde3ed;border-radius:10px}
+    img{max-width:100%;border:1px solid #d5dce8;border-radius:8px;margin:8px 0}
+    table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+    th,td{border:1px solid #d5dce8;padding:6px 8px;text-align:left;vertical-align:top}
+    th{background:#eef3f9}
+    code{background:#f2f5fa;padding:1px 4px;border-radius:4px}
+    h1,h2,h3{color:#102a43}
+    </style></head><body><main><h1>Executive Summary: Homelessness and Housing (SF, NYC, Chicago, Los Angeles)</h1>
+<h2>TL;DR</h2>
+<ul>
+<li>PIT homelessness rose in all four cities (2011-&gt;2024), with the largest growth in Chicago and NYC.</li>
+<li>Phase 2 modeling indicates lagged rent pressure aligns with higher homelessness in this panel, while structural breaks around 2020-2021 are the strongest empirical signal.</li>
+<li>Policy-event timing supports interpretation that shelter-system/inflow regime shifts were major near-term drivers, especially in NYC and Chicago.</li>
+<li>Daniel Lurie now included for SF: official 2025 operational metrics show expansion activity, but no PIT year yet under his administration.</li>
+</ul>
+<h2>Data/Method (quick)</h2>
+<ul>
+<li>HUD PIT 2011-2024 + ZORI 2015-2026 + NYC daily shelter + policy-event annotations.</li>
+<li>Lagged FE regressions, sensitivity checks, Chow break tests.</li>
+</ul>
+<h2>Key Visuals</h2>
+<p><img alt="Growth" src="chart_homeless_pct_change_city.png" />
+<img alt="Break tests" src="chart_phase2_break_tests.png" />
+<img alt="Policy timeline" src="chart_policy_event_timeline.png" />
+<img alt="SF Lurie" src="chart_sf_lurie_operational_metrics.png" /></p></main></body></html>

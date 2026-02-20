@@ -1,332 +1,562 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Metro Homelessness and Housing Patterns</title>
-<style>
-body { font-family: "Segoe UI", Arial, sans-serif; line-height: 1.5; margin: 0; background: #f7f8fa; color: #1d2433; }
-.container { max-width: 1080px; margin: 0 auto; padding: 28px; background: white; }
-h1,h2,h3 { color: #0f2747; }
-.tldr { background: #eef5ff; border-left: 5px solid #2c6dd2; padding: 14px 16px; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-img { width: 100%; border: 1px solid #d7dce5; border-radius: 8px; }
-table { border-collapse: collapse; width: 100%; font-size: 14px; }
-th, td { border: 1px solid #d7dce5; padding: 8px; text-align: left; }
-th { background: #f1f4f8; }
-@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .container { padding: 16px; } }
-</style>
-</head>
-<body>
-<div class="container">
-<h1>Metro Homelessness and Housing Patterns (2011-2026)</h1>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>4-city report</title><style>
+    body{font-family:Arial,sans-serif;max-width:1100px;margin:22px auto;padding:0 12px;line-height:1.45;color:#1b2433;background:#f8fafc}
+    main{background:white;padding:24px;border:1px solid #dde3ed;border-radius:10px}
+    img{max-width:100%;border:1px solid #d5dce8;border-radius:8px;margin:8px 0}
+    table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+    th,td{border:1px solid #d5dce8;padding:6px 8px;text-align:left;vertical-align:top}
+    th{background:#eef3f9}
+    code{background:#f2f5fa;padding:1px 4px;border-radius:4px}
+    h1,h2,h3{color:#102a43}
+    </style></head><body><main><h1>Metro Homelessness and Housing Patterns (2011-2026)</h1>
 <h2>TL;DR</h2>
-<div class="tldr">
 <ul>
-<li>Homelessness increased across all four cities in HUD PIT data from 2011 to 2024: Chicago (+183.9%), NYC (+174.1%), Los Angeles (+105.7%), San Francisco (+46.8%).</li>
-<li>The sharpest 2022->2024 increases in NYC and Chicago were mostly sheltered-count growth, while Los Angeles increased in both sheltered and unsheltered counts.</li>
-<li>Rent pressure rose in all metros (ZORI 2015->2026): Los Angeles +59.2%, Chicago +52.0%, NYC +45.9%, SF +33.1%.</li>
-<li>Comparable annual PIT for 2026 is not yet available in this run; NYC daily shelter census through 2026-02-18 is +0.14% vs same 2025 YTD window.</li>
+<li>Long-run PIT homelessness rose in all four cities (2011-&gt;2024), highest in Chicago and NYC.</li>
+<li>Phase 2 lagged models suggest prior-year rent pressure is more predictive than same-year rent in this short panel, but coefficients are unstable and inference is weak due small-N/time-series limits.</li>
+<li>Structural break tests identify statistically strong inflection years around 2020-2021 in all cities, aligning with pandemic-era counting/policy shifts and post-2022 intake pressures.</li>
+<li>Policy annotations strengthen interpretation: NYC/Chicago breaks align with shelter-system shocks; SF and LA include major operational/funding pivots; Daniel Lurie period in SF currently has operational metrics but not PIT-year trend data yet.</li>
 </ul>
-</div>
-
-<h2>Data and Method</h2>
+<h2>Nature of Data, Sources, and Methodology</h2>
 <ul>
-<li><strong>Nature of data:</strong> annual HUD PIT CoC counts, monthly metro rent index (ZORI annualized), and NYC daily operational shelter census.</li>
-<li><strong>Cities:</strong> SF (CA-501), NYC (NY-600), Chicago (IL-510), Los Angeles (CA-600).</li>
-<li><strong>Method:</strong> trend analysis, mayor-term segmentation, 2022->2024 sheltered-vs-unsheltered decomposition, and rent-vs-homelessness comparison.</li>
-<li><strong>Caveat:</strong> PIT methodology differs by year in some CoCs (notably around 2021).</li>
+<li><code>Data</code>: HUD PIT CoC annual counts; Zillow ZORI metro rent index; NYC daily shelter census; city policy-event annotations (official sources prioritized).</li>
+<li><code>Geography</code>: SF (CA-501), NYC (NY-600), Chicago (IL-510), Los Angeles (CA-600).</li>
+<li><code>Window</code>: PIT 2011-2024; ZORI 2015-2026; NYC daily 2021-03-01 through 2026-02-18; policy events 2016-2025.</li>
+<li><code>Phase 2 methods</code>: city fixed-effects lagged regression, event-indicator augmentation, sensitivity dropping method-warning rows, and Chow structural-break tests by city.</li>
+<li><code>Limits</code>: short panel and potential endogeneity; PIT methodology differs in some years (notably 2021 sheltered-only/partial unsheltered in select CoCs).</li>
 </ul>
-
-<h2>Key Insights and Visualizations</h2>
-<h3>1) Long-run growth is substantial</h3>
-<div class="grid">
-  <img src="chart_pit_overall_2011_2024.png" alt="PIT trends" />
-  <img src="chart_homeless_pct_change_city.png" alt="Percent change by city" />
-</div>
-
-<h3>2) Unsheltered dynamics diverge</h3>
-<img src="chart_unsheltered_share_2011_2024.png" alt="Unsheltered share" />
-
-<h3>3) 2022->2024 composition differs by city</h3>
-<img src="chart_2022_2024_decomposition.png" alt="Decomposition" />
-
-<h3>4) Rent pressure is widespread, link is mediated</h3>
-<div class="grid">
-  <img src="chart_zori_annual.png" alt="ZORI trends" />
-  <img src="chart_rent_vs_homeless_scatter.png" alt="Rent vs homeless scatter" />
-</div>
-
-<h3>5) Mayor-period outcomes vary strongly</h3>
-<img src="chart_mayor_term_pct_change.png" alt="Mayor-term changes" />
-
-<h2>Interpretation</h2>
+<h2>Key Insights + Visuals</h2>
+<ol>
+<li>Long-run growth in PIT homelessness is material across all cities.</li>
+</ol>
+<p><img alt="PIT trend" src="chart_pit_overall_2011_2024.png" />
+<img alt="Growth by city" src="chart_homeless_pct_change_city.png" /></p>
+<ol>
+<li>2022-&gt;2024 composition differs; NYC/Chicago growth is mostly sheltered.</li>
+</ol>
+<p><img alt="Decomposition" src="chart_2022_2024_decomposition.png" /></p>
+<ol>
+<li>Unsheltered share trends diverge, with LA rising and SF/NYC/Chicago declining.</li>
+</ol>
+<p><img alt="Unsheltered share" src="chart_unsheltered_share_2011_2024.png" /></p>
+<ol>
+<li>Phase 2 model: lagged rent term is directionally positive in homelessness models; same-year rent term is not robust.</li>
+</ol>
+<p><img alt="Model coefficients" src="chart_phase2_model_coefficients.png" /></p>
+<ol>
+<li>Break tests show strongest inflection around 2020-2021 across city series.</li>
+</ol>
+<p><img alt="Break tests" src="chart_phase2_break_tests.png" /></p>
+<ol>
+<li>Policy timeline clarifies likely channels behind breaks and trend changes.</li>
+</ol>
+<p><img alt="Policy timeline" src="chart_policy_event_timeline.png" /></p>
+<ol>
+<li>San Francisco Daniel Lurie period: early operational metrics (2025) show material throughput actions while PIT trend data for his term is not yet available.</li>
+</ol>
+<p><img alt="SF Lurie metrics" src="chart_sf_lurie_operational_metrics.png" /></p>
+<h2>Phase 2 “What Explains What” Readout</h2>
 <ul>
-<li>NYC and Chicago recent growth appears concentrated in sheltered systems.</li>
-<li>Los Angeles remains high with persistent unsheltered burden and only modest recent flattening.</li>
-<li>San Francisco shows lower net growth than peers and declining unsheltered share after 2019.</li>
-<li>Housing costs likely raise baseline risk, but policy and capacity channels shape observed counts.</li>
+<li>Baseline events model (<code>ln_homeless</code>): lagged rent coef=4.53 (p=0.054); same-year rent coef=-0.01 (p=0.998).</li>
+<li>Sensitivity excluding method-warning rows: lagged rent coef=5.14 (p=0.005).</li>
+<li>Event dummies (<code>asylum_shock</code>, <code>la_emergency</code>) are directionally plausible in some specs but statistically weak in this sample; treat as suggestive, not causal proof.</li>
+<li>Highest-confidence explanation: structural breaks around 2020-2021 plus policy-event timing indicate institutional/shelter-system regime changes were first-order drivers of recent jumps, especially NYC/Chicago.</li>
 </ul>
-
 <h2>Detailed Findings</h2>
-<h3>City summary (2011->2024 PIT)</h3>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>start_homeless</th>
-      <th>end_homeless</th>
-      <th>pct_change_homeless</th>
-      <th>pp_change_unsheltered_share</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Chicago</td>
-      <td>6,635.0</td>
-      <td>18,836.0</td>
-      <td>183.9</td>
-      <td>-17.3</td>
-    </tr>
-    <tr>
-      <td>Los Angeles</td>
-      <td>34,622.0</td>
-      <td>71,201.0</td>
-      <td>105.7</td>
-      <td>18.3</td>
-    </tr>
-    <tr>
-      <td>New York City</td>
-      <td>51,123.0</td>
-      <td>140,134.0</td>
-      <td>174.1</td>
-      <td>-2.0</td>
-    </tr>
-    <tr>
-      <td>San Francisco</td>
-      <td>5,669.0</td>
-      <td>8,323.0</td>
-      <td>46.8</td>
-      <td>-7.2</td>
-    </tr>
-  </tbody>
+<h3>City summary (2011-&gt;2024 PIT)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">city</th>
+<th style="text-align: right;">start_homeless</th>
+<th style="text-align: right;">end_homeless</th>
+<th style="text-align: right;">pct_change_homeless</th>
+<th style="text-align: right;">pp_change_unsheltered_share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: right;">6635</td>
+<td style="text-align: right;">18836</td>
+<td style="text-align: right;">183.888</td>
+<td style="text-align: right;">-17.2784</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: right;">34622</td>
+<td style="text-align: right;">71201</td>
+<td style="text-align: right;">105.652</td>
+<td style="text-align: right;">18.295</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: right;">51123</td>
+<td style="text-align: right;">140134</td>
+<td style="text-align: right;">174.111</td>
+<td style="text-align: right;">-2.04195</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: right;">5669</td>
+<td style="text-align: right;">8323</td>
+<td style="text-align: right;">46.816</td>
+<td style="text-align: right;">-7.15088</td>
+</tr>
+</tbody>
 </table>
-<h3>2022->2024 decomposition</h3>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>change_total_2022_2024</th>
-      <th>change_sheltered_2022_2024</th>
-      <th>change_unsheltered_2022_2024</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Chicago</td>
-      <td>14961</td>
-      <td>14590</td>
-      <td>371</td>
-    </tr>
-    <tr>
-      <td>Los Angeles</td>
-      <td>6090</td>
-      <td>2459</td>
-      <td>3631</td>
-    </tr>
-    <tr>
-      <td>New York City</td>
-      <td>78294</td>
-      <td>77352</td>
-      <td>942</td>
-    </tr>
-    <tr>
-      <td>San Francisco</td>
-      <td>569</td>
-      <td>612</td>
-      <td>-43</td>
-    </tr>
-  </tbody>
+<h3>2022-&gt;2024 decomposition</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">city</th>
+<th style="text-align: right;">change_total_2022_2024</th>
+<th style="text-align: right;">change_sheltered_2022_2024</th>
+<th style="text-align: right;">change_unsheltered_2022_2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: right;">14961</td>
+<td style="text-align: right;">14590</td>
+<td style="text-align: right;">371</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: right;">6090</td>
+<td style="text-align: right;">2459</td>
+<td style="text-align: right;">3631</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: right;">78294</td>
+<td style="text-align: right;">77352</td>
+<td style="text-align: right;">942</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: right;">569</td>
+<td style="text-align: right;">612</td>
+<td style="text-align: right;">-43</td>
+</tr>
+</tbody>
 </table>
-<h3>Mayor-period summary</h3>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>mayor</th>
-      <th>start_year</th>
-      <th>end_year</th>
-      <th>start_homeless</th>
-      <th>end_homeless</th>
-      <th>pct_change_homeless</th>
-      <th>pp_change_unsheltered_share</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Chicago</td>
-      <td>Rahm Emanuel</td>
-      <td>2011</td>
-      <td>2019</td>
-      <td>6,635.0</td>
-      <td>5,290.0</td>
-      <td>-20.3</td>
-      <td>-2.1</td>
-    </tr>
-    <tr>
-      <td>Chicago</td>
-      <td>Lori Lightfoot</td>
-      <td>2020</td>
-      <td>2023</td>
-      <td>5,390.0</td>
-      <td>6,139.0</td>
-      <td>13.9</td>
-      <td>-12.2</td>
-    </tr>
-    <tr>
-      <td>Chicago</td>
-      <td>Brandon Johnson</td>
-      <td>2024</td>
-      <td>2024</td>
-      <td>18,836.0</td>
-      <td>18,836.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>Los Angeles</td>
-      <td>Antonio Villaraigosa</td>
-      <td>2011</td>
-      <td>2013</td>
-      <td>34,622.0</td>
-      <td>35,524.0</td>
-      <td>2.6</td>
-      <td>12.4</td>
-    </tr>
-    <tr>
-      <td>Los Angeles</td>
-      <td>Eric Garcetti</td>
-      <td>2014</td>
-      <td>2022</td>
-      <td>34,393.0</td>
-      <td>65,111.0</td>
-      <td>89.3</td>
-      <td>4.8</td>
-    </tr>
-    <tr>
-      <td>Los Angeles</td>
-      <td>Karen Bass</td>
-      <td>2023</td>
-      <td>2024</td>
-      <td>71,320.0</td>
-      <td>71,201.0</td>
-      <td>-0.2</td>
-      <td>-3.8</td>
-    </tr>
-    <tr>
-      <td>New York City</td>
-      <td>Michael Bloomberg</td>
-      <td>2011</td>
-      <td>2013</td>
-      <td>51,123.0</td>
-      <td>64,060.0</td>
-      <td>25.3</td>
-      <td>-0.2</td>
-    </tr>
-    <tr>
-      <td>New York City</td>
-      <td>Bill de Blasio</td>
-      <td>2014</td>
-      <td>2021</td>
-      <td>67,810.0</td>
-      <td>68,358.0</td>
-      <td>0.8</td>
-      <td>-1.5</td>
-    </tr>
-    <tr>
-      <td>New York City</td>
-      <td>Eric Adams</td>
-      <td>2022</td>
-      <td>2024</td>
-      <td>61,840.0</td>
-      <td>140,134.0</td>
-      <td>126.6</td>
-      <td>-2.4</td>
-    </tr>
-    <tr>
-      <td>San Francisco</td>
-      <td>Ed Lee</td>
-      <td>2011</td>
-      <td>2017</td>
-      <td>5,669.0</td>
-      <td>6,858.0</td>
-      <td>21.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <td>San Francisco</td>
-      <td>Mark Farrell (interim)</td>
-      <td>2018</td>
-      <td>2018</td>
-      <td>6,857.0</td>
-      <td>6,857.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>San Francisco</td>
-      <td>London Breed</td>
-      <td>2019</td>
-      <td>2024</td>
-      <td>8,035.0</td>
-      <td>8,323.0</td>
-      <td>3.6</td>
-      <td>-12.2</td>
-    </tr>
-  </tbody>
+<h3>Phase 2 break-test summary</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">break_year</th>
+<th style="text-align: right;">F_stat</th>
+<th style="text-align: right;">p_value</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">34.9261</td>
+<td style="text-align: right;">3.0801e-05</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: left;">overall_homeless</td>
+</tr>
+<tr>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">29.2024</td>
+<td style="text-align: right;">6.67675e-05</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">overall_homeless</td>
+</tr>
+<tr>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">10.1569</td>
+<td style="text-align: right;">0.00390659</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">overall_homeless</td>
+</tr>
+<tr>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">8.02217</td>
+<td style="text-align: right;">0.00834513</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">overall_homeless</td>
+</tr>
+<tr>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">9.80953</td>
+<td style="text-align: right;">0.00438676</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">unsheltered_share</td>
+</tr>
+<tr>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">9.39476</td>
+<td style="text-align: right;">0.00505624</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">unsheltered_share</td>
+</tr>
+<tr>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">6.61931</td>
+<td style="text-align: right;">0.0147553</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: left;">unsheltered_share</td>
+</tr>
+<tr>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">5.02922</td>
+<td style="text-align: right;">0.0307974</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">unsheltered_share</td>
+</tr>
+</tbody>
 </table>
-<h3>Rent summary (ZORI)</h3>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>rent_start_year</th>
-      <th>rent_end_year</th>
-      <th>rent_pct_change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Chicago</td>
-      <td>2015</td>
-      <td>2026</td>
-      <td>52.0</td>
-    </tr>
-    <tr>
-      <td>Los Angeles</td>
-      <td>2015</td>
-      <td>2026</td>
-      <td>59.2</td>
-    </tr>
-    <tr>
-      <td>New York City</td>
-      <td>2015</td>
-      <td>2026</td>
-      <td>45.9</td>
-    </tr>
-    <tr>
-      <td>San Francisco</td>
-      <td>2015</td>
-      <td>2026</td>
-      <td>33.1</td>
-    </tr>
-  </tbody>
+<h3>Policy events annotation table</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">mayor</th>
+<th style="text-align: left;">event</th>
+<th style="text-align: left;">policy_type</th>
+<th style="text-align: left;">source_type</th>
+<th style="text-align: left;">confidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: left;">2023-05-15</td>
+<td style="text-align: left;">Brandon Johnson</td>
+<td style="text-align: left;">Johnson administration begins with homelessness funding platform (Bring Chicago Home)</td>
+<td style="text-align: left;">Administration change / funding proposal</td>
+<td style="text-align: left;">secondary</td>
+<td style="text-align: left;">medium</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: left;">2024-03-19</td>
+<td style="text-align: left;">Brandon Johnson</td>
+<td style="text-align: left;">Bring Chicago Home referendum fails</td>
+<td style="text-align: left;">Funding referendum outcome</td>
+<td style="text-align: left;">secondary</td>
+<td style="text-align: left;">medium</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">2016-11-08</td>
+<td style="text-align: left;">Eric Garcetti</td>
+<td style="text-align: left;">Measure HHH approved to finance supportive housing</td>
+<td style="text-align: left;">Capital funding</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">2022-12-12</td>
+<td style="text-align: left;">Karen Bass</td>
+<td style="text-align: left;">Declared state of emergency on homelessness (day one)</td>
+<td style="text-align: left;">Emergency operations</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">2022-12-21</td>
+<td style="text-align: left;">Karen Bass</td>
+<td style="text-align: left;">Executive Directive 2 launched Inside Safe</td>
+<td style="text-align: left;">Encampment-to-housing initiative</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">2023-04-01</td>
+<td style="text-align: left;">Karen Bass</td>
+<td style="text-align: left;">Measure ULA transfer tax takes effect</td>
+<td style="text-align: left;">Funding for housing/homelessness programs</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">2017-11-14</td>
+<td style="text-align: left;">Bill de Blasio</td>
+<td style="text-align: left;">Housing New York 2.0 announced (300,000 homes goal)</td>
+<td style="text-align: left;">Housing supply strategy</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">2022-10-07</td>
+<td style="text-align: left;">Eric Adams</td>
+<td style="text-align: left;">Emergency Executive Order 224 declared asylum-seeker emergency</td>
+<td style="text-align: left;">Emergency shelter operations</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">2024-12-05</td>
+<td style="text-align: left;">Eric Adams</td>
+<td style="text-align: left;">City of Yes for Housing Opportunity approved by City Council</td>
+<td style="text-align: left;">Zoning reform / housing supply</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">2018-11-06</td>
+<td style="text-align: left;">London Breed</td>
+<td style="text-align: left;">Proposition C approved (Our City, Our Home Fund)</td>
+<td style="text-align: left;">Funding</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">2025-01-08</td>
+<td style="text-align: left;">Daniel Lurie</td>
+<td style="text-align: left;">Daniel Lurie sworn in as 46th mayor</td>
+<td style="text-align: left;">Administration change</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">2025-02-12</td>
+<td style="text-align: left;">Daniel Lurie</td>
+<td style="text-align: left;">Fentanyl state of emergency ordinance signed; 24/7 stabilization center announced</td>
+<td style="text-align: left;">Emergency powers + treatment/shelter operations</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">2025-12-08</td>
+<td style="text-align: left;">Daniel Lurie</td>
+<td style="text-align: left;">Mayor update reports 500+ treatment/recovery beds and 1,600+ shelter referrals in 11 months</td>
+<td style="text-align: left;">Operational expansion</td>
+<td style="text-align: left;">official</td>
+<td style="text-align: left;">high</td>
+</tr>
+</tbody>
+</table>
+<h3>SF Daniel Lurie operational metrics (official release)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">metric</th>
+<th style="text-align: right;">value</th>
+<th style="text-align: left;">unit</th>
+<th style="text-align: left;">as_of</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Treatment and recovery beds opened</td>
+<td style="text-align: right;">505</td>
+<td style="text-align: left;">beds</td>
+<td style="text-align: left;">2025-12-08</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shelter referrals completed</td>
+<td style="text-align: right;">1600</td>
+<td style="text-align: left;">referrals</td>
+<td style="text-align: left;">2025-12-08</td>
+</tr>
+<tr>
+<td style="text-align: left;">Encampment offers accepted</td>
+<td style="text-align: right;">7560</td>
+<td style="text-align: left;">accepted offers (estimated from 54% of 14,000+)</td>
+<td style="text-align: left;">2025-12-08</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tents and makeshift structures removed</td>
+<td style="text-align: right;">330</td>
+<td style="text-align: left;">count</td>
+<td style="text-align: left;">2025-12-08</td>
+</tr>
+</tbody>
+</table>
+<h3>Mayor-period PIT summary</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">mayor</th>
+<th style="text-align: right;">start_year</th>
+<th style="text-align: right;">end_year</th>
+<th style="text-align: right;">pct_change_homeless</th>
+<th style="text-align: right;">pp_change_unsheltered_share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: left;">Rahm Emanuel</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">-20.2713</td>
+<td style="text-align: right;">-2.13475</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: left;">Lori Lightfoot</td>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">13.8961</td>
+<td style="text-align: right;">-12.2409</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: left;">Brandon Johnson</td>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">Antonio Villaraigosa</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">2.60528</td>
+<td style="text-align: right;">12.3517</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">Eric Garcetti</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">89.3147</td>
+<td style="text-align: right;">4.77924</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">Karen Bass</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">-0.166854</td>
+<td style="text-align: right;">-3.80714</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">Michael Bloomberg</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">25.3056</td>
+<td style="text-align: right;">-0.215569</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">Bill de Blasio</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">0.80814</td>
+<td style="text-align: right;">-1.46454</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: left;">Eric Adams</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">126.607</td>
+<td style="text-align: right;">-2.44929</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">Ed Lee</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">20.9737</td>
+<td style="text-align: right;">4.00957</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">Mark Farrell (interim)</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: left;">London Breed</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">3.58432</td>
+<td style="text-align: right;">-12.1551</td>
+</tr>
+</tbody>
+</table>
+<h3>Rent summary</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">city</th>
+<th style="text-align: right;">rent_start_year</th>
+<th style="text-align: right;">rent_end_year</th>
+<th style="text-align: right;">rent_pct_change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chicago</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">2026</td>
+<td style="text-align: right;">51.9577</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">2026</td>
+<td style="text-align: right;">59.1567</td>
+</tr>
+<tr>
+<td style="text-align: left;">New York City</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">2026</td>
+<td style="text-align: right;">45.8861</td>
+</tr>
+<tr>
+<td style="text-align: left;">San Francisco</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">2026</td>
+<td style="text-align: right;">33.1439</td>
+</tr>
+</tbody>
 </table>
 <h3>NYC current-year operational context</h3>
-<p>Same-window YTD average shelter census: 2025=86247, 2026=86364, change=0.14% (first 49 days).</p>
-
-<h2>Sources</h2>
-<ul><li><a href="https://www.huduser.gov/portal/datasets/ahar.html">HUD PIT/AHAR</a></li><li><a href="https://www.huduser.gov/portal/datasets/ahar/2024-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html">HUD 2007-2024 PIT by CoC workbook</a></li><li><a href="https://data.cityofnewyork.us/d/k46n-sa2m">NYC DHS Daily Shelter Census</a></li><li><a href="https://www.zillow.com/research/data/">Zillow ZORI Data</a></li><li><a href="https://www.sf.gov/profile--mayor-daniel-lurie">San Francisco Mayor Office</a></li><li><a href="https://www.nyc.gov/office-of-the-mayor/news/">New York City Mayor News</a></li><li><a href="https://www.chicago.gov/city/en/depts/mayor.html">Chicago Mayor Office</a></li><li><a href="https://mayor.lacity.gov/">Los Angeles Mayor Office</a></li></ul>
-</div>
-</body>
-</html>
+<ul>
+<li>Same-window YTD average shelter census: 2025=86247, 2026=86364, change=0.14% (first 49 days).</li>
+</ul>
+<h2>Source Links</h2>
+<ul>
+<li><a href="https://www.huduser.gov/portal/datasets/ahar.html">HUD PIT/AHAR</a></li>
+<li><a href="https://www.huduser.gov/portal/datasets/ahar/2024-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html">HUD PIT 2024 page</a></li>
+<li><a href="https://data.cityofnewyork.us/d/k46n-sa2m">NYC DHS Daily Shelter Census</a></li>
+<li><a href="https://www.zillow.com/research/data/">Zillow ZORI data</a></li>
+<li><a href="https://www.sf.gov/information/our-city-our-home-oversight-committee">SF Our City Our Home</a></li>
+<li><a href="https://www.sf.gov/information--mayoral-inauguration-and-public-activities">SF Lurie inauguration</a></li>
+<li><a href="https://www.sf.gov/mayor-lurie-signs-fentanyl-state-of-emergency-ordinance-announces-plan-for-247-police-friendly-stabilization-center">SF Lurie emergency ordinance</a></li>
+<li><a href="https://www.sf.gov/news/mayor-daniel-lurie-delivers-significant-progress-addressing-city-challenges-and-leading-san">SF Lurie year-one update</a></li>
+<li><a href="https://www.nyc.gov/office-of-the-mayor/news/722-17/de-blasio-administration-announces-housing-new-york-2-0-three-quarter-million-new-yorkers#/0">NYC Housing New York 2.0</a></li>
+<li><a href="https://www.nyc.gov/mayors-office/news/2022/10/emergency-executive-order-224">NYC EO 224</a></li>
+<li><a href="https://www.nyc.gov/mayors-office/news/2025/12/most-pro-housing-administration-in-city-history--mayor-adams--ci">NYC City of Yes passage</a></li>
+<li><a href="https://housing2.lacity.org/residents/measure-hhh">LA Measure HHH</a></li>
+<li><a href="https://mayor.lacity.gov/news/mayor-karen-bass-declares-state-emergency-homelessness">LA emergency declaration</a></li>
+<li><a href="https://mayor.lacity.gov/news/mayor-bass-signs-executive-directive-launching-inside-safe-changing-citys-encampment-approach">LA Inside Safe directive</a></li>
+<li><a href="https://housing.lacity.gov/highlights/uplifting-la-measure-ula">LA Measure ULA</a></li>
+<li><a href="https://www.cbsnews.com/chicago/news/bring-chicago-home-tax-referendum-fails/">Chicago Bring Chicago Home result</a></li>
+</ul></main></body></html>

@@ -1,14 +1,59 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Presentation Slides</title>
-<style>body{font-family:Arial,sans-serif;background:#0e1726;color:#eef2ff;margin:0}.slide{min-height:100vh;padding:36px 56px;border-bottom:1px solid #22304a;box-sizing:border-box}h1,h2{margin-top:0;color:#b9d2ff}img{max-width:100%;max-height:70vh;border:1px solid #415372;border-radius:8px;background:white}ul{line-height:1.6}a{color:#9ec5ff}</style></head><body>
-<div class="slide"><h1>Homelessness and Housing: 4-City Deep Dive</h1><h2>SF | NYC | Chicago | Los Angeles</h2></div>
-<div class="slide"><h2>TL;DR</h2><ul><li>All four cities increased in PIT counts (2011->2024).</li><li>NYC and Chicago recent jumps are mainly sheltered growth.</li><li>Los Angeles growth includes both sheltered and unsheltered gains.</li><li>Rent pressure rose everywhere.</li></ul></div>
-<div class="slide"><h2>Data and Method</h2><ul><li>HUD PIT, Zillow ZORI, NYC daily shelter census.</li><li>Trend analysis, mayor periods, decomposition by shelter status.</li></ul></div>
-<div class="slide"><h2>Long-run PIT trend</h2><img src="chart_pit_overall_2011_2024.png"/></div>
-<div class="slide"><h2>City growth ranking</h2><img src="chart_homeless_pct_change_city.png"/></div>
-<div class="slide"><h2>Unsheltered share dynamics</h2><img src="chart_unsheltered_share_2011_2024.png"/></div>
-<div class="slide"><h2>2022->2024 decomposition</h2><img src="chart_2022_2024_decomposition.png"/></div>
-<div class="slide"><h2>Housing pressure</h2><img src="chart_zori_annual.png"/><img src="chart_rent_vs_homeless_scatter.png"/></div>
-<div class="slide"><h2>Mayor-period outcomes</h2><img src="chart_mayor_term_pct_change.png"/></div>
-<div class="slide"><h2>Interpretation</h2><ul><li>Shelter-system and inflow dynamics are central in NYC and Chicago.</li><li>LA remains structurally high with persistent unsheltered burden.</li><li>SF shows lower relative growth and declining unsheltered share post-2019.</li></ul></div>
-<div class="slide"><h2>Sources</h2><ul><li><a href="https://www.huduser.gov/portal/datasets/ahar.html">HUD PIT/AHAR</a></li><li><a href="https://www.huduser.gov/portal/datasets/ahar/2024-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html">HUD 2007-2024 PIT by CoC workbook</a></li><li><a href="https://data.cityofnewyork.us/d/k46n-sa2m">NYC DHS Daily Shelter Census</a></li><li><a href="https://www.zillow.com/research/data/">Zillow ZORI Data</a></li><li><a href="https://www.sf.gov/profile--mayor-daniel-lurie">San Francisco Mayor Office</a></li><li><a href="https://www.nyc.gov/office-of-the-mayor/news/">New York City Mayor News</a></li><li><a href="https://www.chicago.gov/city/en/depts/mayor.html">Chicago Mayor Office</a></li><li><a href="https://mayor.lacity.gov/">Los Angeles Mayor Office</a></li></ul></div>
-</body></html>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Slides</title><style>
+    body{font-family:Arial,sans-serif;max-width:1100px;margin:22px auto;padding:0 12px;line-height:1.45;color:#1b2433;background:#f8fafc}
+    main{background:white;padding:24px;border:1px solid #dde3ed;border-radius:10px}
+    img{max-width:100%;border:1px solid #d5dce8;border-radius:8px;margin:8px 0}
+    table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+    th,td{border:1px solid #d5dce8;padding:6px 8px;text-align:left;vertical-align:top}
+    th{background:#eef3f9}
+    code{background:#f2f5fa;padding:1px 4px;border-radius:4px}
+    h1,h2,h3{color:#102a43}
+    hr{border:none;border-top:2px dashed #9fb3c8;margin:28px 0}</style></head><body><main><h1>Homelessness and Housing: 4-City Deep Dive (Phase 2)</h1>
+<h2>SF | NYC | Chicago | Los Angeles</h2>
+<hr />
+<h2>TL;DR</h2>
+<ul>
+<li>Long-run growth in all four cities.</li>
+<li>Break tests point to 2020-2021 regime shifts.</li>
+<li>Policy annotations explain likely channels.</li>
+<li>SF Daniel Lurie period now included with 2025 operational data.</li>
+</ul>
+<hr />
+<h2>Long-run trends</h2>
+<p><img alt="" src="chart_pit_overall_2011_2024.png" />
+<img alt="" src="chart_homeless_pct_change_city.png" /></p>
+<hr />
+<h2>Composition and unsheltered dynamics</h2>
+<p><img alt="" src="chart_2022_2024_decomposition.png" />
+<img alt="" src="chart_unsheltered_share_2011_2024.png" /></p>
+<hr />
+<h2>Phase 2 model evidence</h2>
+<p><img alt="" src="chart_phase2_model_coefficients.png" />
+<img alt="" src="chart_phase2_break_tests.png" /></p>
+<hr />
+<h2>Policy timeline annotations</h2>
+<h2><img alt="" src="chart_policy_event_timeline.png" /></h2>
+<h2>San Francisco: Daniel Lurie (2025)</h2>
+<h2><img alt="" src="chart_sf_lurie_operational_metrics.png" /></h2>
+<h2>Interpretation</h2>
+<ul>
+<li>Rent pressure appears as a lagged structural factor in panel models.</li>
+<li>2020-2021 breaks indicate system-level shifts beyond rent alone.</li>
+<li>Recent NYC/Chicago changes are shelter-system heavy.</li>
+<li>LA and SF show different unsheltered dynamics and policy levers.</li>
+</ul>
+<hr />
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.huduser.gov/portal/datasets/ahar.html">HUD PIT/AHAR</a></li>
+<li><a href="https://www.huduser.gov/portal/datasets/ahar/2024-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html">HUD PIT 2024 page</a></li>
+<li><a href="https://data.cityofnewyork.us/d/k46n-sa2m">NYC DHS Daily Shelter Census</a></li>
+<li><a href="https://www.zillow.com/research/data/">Zillow ZORI data</a></li>
+<li><a href="https://www.sf.gov/information/our-city-our-home-oversight-committee">SF Our City Our Home</a></li>
+<li><a href="https://www.sf.gov/information--mayoral-inauguration-and-public-activities">SF Lurie inauguration</a></li>
+<li><a href="https://www.sf.gov/mayor-lurie-signs-fentanyl-state-of-emergency-ordinance-announces-plan-for-247-police-friendly-stabilization-center">SF Lurie emergency ordinance</a></li>
+<li><a href="https://www.sf.gov/news/mayor-daniel-lurie-delivers-significant-progress-addressing-city-challenges-and-leading-san">SF Lurie year-one update</a></li>
+<li><a href="https://www.nyc.gov/office-of-the-mayor/news/722-17/de-blasio-administration-announces-housing-new-york-2-0-three-quarter-million-new-yorkers#/0">NYC Housing New York 2.0</a></li>
+<li><a href="https://www.nyc.gov/mayors-office/news/2022/10/emergency-executive-order-224">NYC EO 224</a></li>
+<li><a href="https://www.nyc.gov/mayors-office/news/2025/12/most-pro-housing-administration-in-city-history--mayor-adams--ci">NYC City of Yes passage</a></li>
+<li><a href="https://housing2.lacity.org/residents/measure-hhh">LA Measure HHH</a></li>
+</ul></main></body></html>

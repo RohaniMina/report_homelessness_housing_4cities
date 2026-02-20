@@ -1,0 +1,27 @@
+Phase 2 Modeling Summary
+========================
+Panel rows used (baseline): 36
+
+Model M2 (ln_homeless with events): key coefficients
+- ln_zori: coef=-0.005, p=0.9983
+- ln_zori_lag1: coef=4.527, p=0.0541
+- asylum_shock: coef=0.121, p=0.6788
+- la_emergency: coef=-0.156, p=0.6718
+- year: coef=-0.122, p=0.0484
+
+Sensitivity M2s (drop method-warning years): key coefficients
+- ln_zori: coef=-0.737, p=0.6939
+- ln_zori_lag1: coef=5.143, p=0.0050
+- asylum_shock: coef=-0.035, p=0.8695
+- la_emergency: coef=-0.513, p=0.0557
+- year: coef=-0.082, p=0.0807
+
+Best Chow break tests (by city, series)
+- Chicago overall_homeless: break~2021, F=34.93, p=3.08e-05
+- New York City overall_homeless: break~2021, F=29.20, p=6.677e-05
+- San Francisco overall_homeless: break~2020, F=10.16, p=0.003907
+- Los Angeles overall_homeless: break~2020, F=8.02, p=0.008345
+- Los Angeles unsheltered_share: break~2020, F=9.81, p=0.004387
+- San Francisco unsheltered_share: break~2020, F=9.39, p=0.005056
+- Chicago unsheltered_share: break~2021, F=6.62, p=0.01476
+- New York City unsheltered_share: break~2021, F=5.03, p=0.0308
